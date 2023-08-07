@@ -1,15 +1,4 @@
-require_relative 'app'
-
-def app_intro
-  puts 'Welcome to the School Library App!'
-  loop do
-    display_options
-    option = take_input
-    option_methods(option)
-
-    break if option == 7
-  end
-end
+require_relative 'app_controller'
 
 def display_options
   puts 'Please choose one of the options: '
@@ -22,40 +11,9 @@ def display_options
   puts '7 - Exit'
 end
 
-def take_input
-  print 'Enter a number: '
-  option = gets.chomp.to_i
-  until option >= 1 || option <= 7
-    puts 'Please enter a number between 1 and 7!'
-    print 'Enter a number: '
-    option = gets.chomp.to_i
-  end
-  option
-end
-
-def option_methods(option)
-  case option
-  when 1
-    list_all_books
-  when 2
-    list_all_persons
-  when 3
-    create_person
-  when 4
-    create_book
-  when 5
-    create_rental
-  when 6
-    list_all_rentals_of_person
-  else
-    puts 'Thank you for using this app!'
-    exit
-  end
-end
-
 def main
-  app = App.new
-  app.run
+  app_controller = AppController.new
+  app_controller.run(app_controller)
 end
 
 main

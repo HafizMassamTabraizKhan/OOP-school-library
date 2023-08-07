@@ -108,6 +108,12 @@ To run the project, execute the following command:
 - Twitter: [@twitterhandle](https://twitter.com/MassamTabraiz)
 - LinkedIn: [LinkedIn](https://www.linkedin.com/in/hafiz-massam-tabraiz-khan-167644255/)
 
+👤 **Wloter**
+
+- GitHub: [@Bwambale](https://github.com/wolterbwambale)
+- Twitter: [@Bwambale](https://twitter.com/BwambaleWolter)
+- LinkedIn: [@Bwambale](https://www.linkedin.com/in/bwambale-benny-wolter/)
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- FUTURE FEATURES -->
