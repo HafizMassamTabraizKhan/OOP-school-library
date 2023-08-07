@@ -10,3 +10,10 @@ def display_options
   puts '6 - List all rentals for a given person ID'
   puts '7 - Exit'
 end
+
+def main
+  app_controller = AppController.new
+  app_controller.run(app_controller)
+end
+
+main
