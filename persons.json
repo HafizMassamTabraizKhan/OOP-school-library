@@ -1,0 +1,17 @@
+[
+  {
+    "id": "333",
+    "name": "Bwamble",
+    "age": 26,
+    "parent_permission": true,
+    "classroom": "classroom",
+    "title": "Student"
+  },
+  {
+    "id": "573",
+    "name": "Massam",
+    "age": 20,
+    "specialization": "Math",
+    "title": "Teacher"
+  }
+]

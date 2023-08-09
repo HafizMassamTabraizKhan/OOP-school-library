@@ -3,14 +3,20 @@ require_relative 'teacher'
 require_relative 'student'
 require_relative 'classroom'
 require_relative 'rental'
+require_relative 'load_data'
 
 class App
   attr_accessor :books, :students, :teachers, :rental
+
+  include LoadData
 
   def initialize
     @persons = []
     @books = []
     @rentals = []
+    load_books
+    load_people
+    load_rentals
   end
 
   def list_all_books
@@ -28,7 +34,12 @@ class App
       puts "Currently, we don't have any person"
     else
       @persons.each_with_index do |person, index|
-        puts "#{index + 1}) [#{person.title}] Name: #{person.name}, ID: #{person.id}, Age: #{person.age}"
+        if person.title == 'Teacher'
+          puts "#{index + 1}) [#{person.title}] Name: #{person.name}, ID: #{person.id}, Age: #{person.age},
+          Specialization: #{person.specialization}"
+        else
+          puts "#{index + 1}) [#{person.title}] Name: #{person.name}, ID: #{person.id}, Age: #{person.age}"
+        end
       end
     end
   end
@@ -60,7 +71,7 @@ class App
       parent_permission = gets.chomp.upcase
     end
     p_permission = parent_permission == 'Y'
-    student = Student.new(classroom: 'classroom', age: age, name: name, parent_permission: p_permission)
+    student = Student.new(Classroom.new('classroom'), age, name, parent_permission: p_permission)
     @persons << student
     puts 'Student created successfully'
   end
@@ -72,7 +83,7 @@ class App
     name = gets.chomp
     print 'Specialization: '
     specialization = gets.chomp
-    teacher = Teacher.new(specialization: specialization, age: age, name: name)
+    teacher = Teacher.new(specialization, age, name)
     @persons << teacher
     puts 'Teacher created successfully'
   end
@@ -108,7 +119,7 @@ class App
     print 'Date: '
     date = gets.chomp
 
-    rental = Rental.new(date, @persons[person_index - 1], @books[book_index - 1])
+    rental = Rental.new(date, @books[book_index - 1], @persons[person_index - 1])
     @rentals << rental
 
     puts 'Rental created successfully'
