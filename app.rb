@@ -4,11 +4,13 @@ require_relative 'student'
 require_relative 'classroom'
 require_relative 'rental'
 require_relative 'load_data'
+require_relative 'preserve_data'
 
 class App
   attr_accessor :books, :students, :teachers, :rental
 
   include LoadData
+  include PreserveData
 
   def initialize
     @persons = []
@@ -138,6 +140,12 @@ class App
         puts "Date: #{rental.date}, Book \"#{rental.book.title}\" by \"#{rental.book.author}\""
       end
     end
+  end
+
+  def save
+    save_books
+    save_people
+    save_rentals
   end
 
   def run
