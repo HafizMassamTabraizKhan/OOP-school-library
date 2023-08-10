@@ -1,5 +1,5 @@
-require_relative 'student'
-require_relative 'classroom'
+require_relative '../student'
+require_relative '../classroom'
 
 RSpec.describe Student do
   let(:classroom) { instance_double('Classroom', students: []) }

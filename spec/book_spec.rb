@@ -1,4 +1,4 @@
-require_relative 'book'
+require_relative '../book'
 
 RSpec.describe Book do
   describe '#initialize' do

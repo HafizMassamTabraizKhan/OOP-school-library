@@ -1,4 +1,4 @@
-require_relative 'classroom'
+require_relative '../classroom'
 
 RSpec.describe Classroom do
   describe '#add_student' do

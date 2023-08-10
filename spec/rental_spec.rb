@@ -1,5 +1,5 @@
 require 'date'
-require_relative 'rental'
+require_relative '../rental'
 
 RSpec.describe Rental do
   let(:book) { double('book', rentals: []) }
